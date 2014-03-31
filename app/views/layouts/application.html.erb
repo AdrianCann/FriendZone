@@ -3,12 +3,28 @@
 <head>
   <title>FriendCircle</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+      <%= error %>
+      <br>
+    <% end %>
+  <% end %>
+
 <%= yield %>
+
+<% if current_user %>
+  <form action="<%= session_url %>" method="get">
+    <input type="hidden" name="_method" value="delete">
+
+    <%= auth_token %>
+    <button>Log Out</button>
+  </form>
+
+<% end %>
 
 </body>
 </html>
