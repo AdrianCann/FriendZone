@@ -1,11 +1,30 @@
+<h1><em>Friend Zones!!</em></h1>
+
 <form action="<%= session_url %>" method="post">
   <%= auth_token %>
   <p>
-    <label for="email">Email</label><input type="text" name="user[email]" value="" id="email">
-
-    <label for="password">Password</label><input type="password" name="user[password]" value="" id="password">
-
+    <label for="email">
+      Email
+    </label>
+    <br>
+    <input type="text" name="user[email]" value="" id="email">
   </p>
 
-  <p><input type="submit" value="LOG IN"></p>
+  <p>
+    <label for="password">
+      Password
+    </label>
+    <br>
+
+    <input type="password" name="user[password]" value="" id="password">
+  </p>
+
+  <p>
+    <input type="submit" value="LOG IN">
+  </p>
 </form>
+
+<a href="<%= new_mail_url %>">
+  Forgot Password?
+</a>
+

@@ -20,7 +20,7 @@ module SessionHelper
 
   def auth_token
     html = <<-HTML.html_safe
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}">
 
     HTML
 

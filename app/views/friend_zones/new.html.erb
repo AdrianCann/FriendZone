@@ -1,0 +1,29 @@
+<h1>MAKE A FRIEND ZONE !!!</h1>
+
+<form action="<%= friend_zones_url %>" method="post">
+
+  <%= auth_token %>
+
+  <p>
+    <label for="friend_zone_group_name">
+      Name your Zone:
+     </label>
+
+  <input type="text" name="friend_zone[group_name]" id="friend_zone_group_name">
+</p>
+
+  <% User.all.each do |user| %>
+    <label>
+      <input
+        type="checkbox"
+        name="friend_zone[member][]"
+        value="<%= user.id %>">
+
+      <%= user.email %>
+
+    </label>
+    <br>
+  <% end %>
+
+  <input type="submit" value="FRIEND ZONE THESE FRIENDS">
+</form>

@@ -1,0 +1,11 @@
+<form action="<%= mail_url(@user.id) %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <%= auth_token %>
+
+  <label for="mails_password">
+    New Password:
+  </label>
+
+  <input type="password" name="mails[password]" id="mails_password">
+  <input type="submit" value="Reset Password">
+</form>

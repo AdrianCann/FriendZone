@@ -1,0 +1,16 @@
+* {
+
+  background-color: pink;
+  color: red;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+
+}
+
+input {
+
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid red;
+  background-color: lightpink;
+
+}

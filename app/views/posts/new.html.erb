@@ -1,0 +1,36 @@
+<form action="<%= posts_url %>" method="post">
+
+  <%= auth_token %>
+
+  <label for="post_body">Your Post:</label>
+  <textarea id="post_body" name="post[body]"></textarea>
+  <br>
+
+  <% @user.friend_zones.each do |zone| %>
+    <label>
+      <input name="post[group][]" type="checkbox" value="<%= zone.id %>">
+      <%= zone.group_name %>
+    </label>
+    <br>
+  <% end %>
+
+  <label for="link1">
+    Link:
+  </label>
+    <input type="text" name="link[0][url]" id="link1">
+    <br>
+  <label for="link2">
+    Link:
+  </label>
+    <input type="text" name="link[1][url]" id="link2">
+    <br>
+  <label for="link3">
+    Link:
+  </label>
+    <input type="text" name="link[2][url]" id="link3">
+    <br>
+
+
+  <input type="submit" value="Post your post, Buddy Lamers!">
+
+</form>

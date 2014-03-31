@@ -1,0 +1,27 @@
+<%= current_user.email %>
+
+<% current_user.friend_zones.each do |zone| %>
+  <p>
+    <%= zone.group_name %>
+  </p>
+  <ul>
+    <% zone.friends.each do |friend| %>
+      <li>
+        <%= friend.email %>
+      </li>
+    <% end %>
+  </ul>
+
+<% end %>
+
+<form action="<%= new_friend_zone_url %>" method="get">
+  <%= auth_token %>
+
+  <input type="submit" value="FRIEND ZONE SOME FRIENDS">
+</form><br>
+
+<form action="<%= new_post_url %>" method="get">
+  <%= auth_token %>
+
+  <input type="submit" value="Make a post">
+</form>

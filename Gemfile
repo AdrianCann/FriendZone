@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'bcrypt'
 
+gem "letter_opener", :group => :development
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
